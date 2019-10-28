@@ -104,8 +104,7 @@ function calculateWidth(object)
 Rectangle { color: "blue"; width: calculateWidth(parent) }
 ```
 
-Для длинных скриптов необходимо помещать функции в их собственный файл JavaScript и импортировать следующим образом:
-	
+Для длинных скриптов необходимо помещать функции в их собственный файл JavaScript и импортировать следующим образом:	
 
 ```js
 import "myscript.js" as Script
