@@ -1,16 +1,14 @@
-1. Атрибуты объектов QML должны быть всегда структурированы в следующем порядке:
-   	id
-   	property declarations
-   	signal declarations
-   	JavaScript functions
-   	object properties
-   	child objects
-   	states
-   	transitions
+Атрибуты объектов QML должны быть всегда структурированы в следующем порядке:
+	id
+	property declarations
+	signal declarations
+	JavaScript functions
+	object properties
+	child objects
+	states
+	transitions
 
-
-Для лучшей читаемости необходимо разделять эти части пустой строкой.
-	
+Для лучшей читаемости необходимо разделять эти части пустой строкой.	
 
 ```js
 Rectangle {
@@ -60,16 +58,13 @@ Rectangle {
 }
 ```
 
-Групповое свойство:
-	
+Групповое свойство:	
 
 ```js
 Rectangle {
-    	    anchors { left: parent.left; top: parent.top; right: parent.right; leftMargin: 20 }
-	}
+    anchors { left: parent.left; top: parent.top; right: parent.right; leftMargin: 20 }
+}
 ```
-
-
 
 ```js
 Text {
@@ -88,7 +83,10 @@ states: State {
 ```
 
 Если сценарий представляет собой одно выражение, рекомендуется писать его встроенным:
-	Rectangle { color: "blue"; width: parent.width / 3 }
+
+```js
+Rectangle { color: "blue"; width: parent.width / 3 }
+```
 
 Если скрипт имеет длину более пары строк или может использоваться различными объектами, рекомендуется создать функцию и вызвать ее следующим образом:
 
@@ -107,8 +105,10 @@ Rectangle { color: "blue"; width: calculateWidth(parent) }
 ```
 
 Для длинных скриптов необходимо помещать функции в их собственный файл JavaScript и импортировать следующим образом:
-	import "myscript.js" as Script
+	
 
 ```js
+import "myscript.js" as Script
+
 Rectangle { color: "blue"; width: Script.calculateWidth(parent) }
 ```
