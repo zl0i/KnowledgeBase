@@ -10,7 +10,7 @@
 classpath 'com.google.gms:google-services:4.0.1'
 ```
 
-​	2) в android 		
+2) в android 		
 
 ```java
 defaultConfig {
@@ -20,7 +20,7 @@ defaultConfig {
 } 
 ```
 
-3)в конце файла добавляем:
+3) в конце файла добавляем:
 
 ```java
 dependencies {
@@ -132,10 +132,10 @@ public class Notification  extends FirebaseMessagingService {
 
 Отправка уведомлений может осуществляться несколькими способами:
 
-1)через консоль firebase:
+1) через консоль firebase:
 	Идем в Cloud Message - Send first Message - Новое уведомление. Здесь создаем и настраиваем уведомление.
 
-2)через post запрос (legacy):
+2) через post запрос (legacy):
 	url: https://fcm.googleapis.com/fcm/send
 	header:
 		Content-Type: application/json

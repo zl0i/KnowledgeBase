@@ -6,8 +6,8 @@
 3. Заходим в этой консоли в ранее созданную папку (где лежит наш exe-файл)
 
 4. Прописываем команду:
-	```
-G:\Qt\5.11.3\mingw53_32\bin\windeployqt.exe . //точка обязательна
+	```bash
+	G:\Qt\5.11.3\mingw53_32\bin\windeployqt.exe . //точка обязательна
 	```
 	
 	
@@ -18,14 +18,14 @@ G:\Qt\5.11.3\mingw53_32\bin\windeployqt.exe . //точка обязательн�
 
 Для автоматического деплоя после сборки проекта необходимо в .pro файл добавить
 
-```
+```bash
 DESTDIR = ../Deploy
 QMAKE_POST_LINK += $$(QTDIR)/bin/windeployqt $$DESTDIR
 ```
 
 если проект использует qml, необходимо указать аргумент 
 
-```
+```bash
 --qmldir $$OUT_PWD/../$$QMAKE_PROJECT_NAME
 ```
 
@@ -41,15 +41,15 @@ QMAKE_POST_LINK += $$(QTDIR)/bin/windeployqt $$DESTDIR
 
 4. Прописываем команду:
 	
-	```
+	```bash
 	G:\Qt\Tools\QtInstallerFramework\3.0\bin\binarycreator.exe -c config\config.xml -p packages NameInstaller.exe
 	```
 	
 5. Для сборки оффлайн установщика необходимо прописать команду -f
 
 6. Для сборки онлайн установщика необходимо создать папку repository и в консоли выполнить команду
-	```
-G:\Qt\Tools\QtInstallerFramework\3.0\bin\repogen.exe -p packages repository
+	```bash
+	G:\Qt\Tools\QtInstallerFramework\3.0\bin\repogen.exe -p packages repository
 	```
 	
 	
@@ -57,7 +57,7 @@ G:\Qt\Tools\QtInstallerFramework\3.0\bin\repogen.exe -p packages repository
 	
 7. После обновления компонентов необходимо изменить номер версии в package.xml и выполнить в консоли команду 
 	
-	```
+	```bash
 	G:\Qt\Tools\QtInstallerFramework\3.0\bin\repogen.exe --update -p packages repository
 	```
 	
