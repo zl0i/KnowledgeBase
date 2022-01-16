@@ -35,32 +35,32 @@ Android Deep Links позволяют обрабатывать ссылки че
 
 2. Универсальная ссылка (открываться в браузере, либо если установлено приложение, то в нем):
 
-   > В этом случае в AndroidManifest.xml в блок activity необходимо добавить Intent-filter:
-   >
-   > ```xml
-   > <intent-filter android:autoVerify="true"> //необходимо для подтверждения домена
-   > 	<data android:scheme="https://" android:host="example.com" android:path="/example"/>  
-   > 	<action android:name="android.intent.action.VIEW"/> 
-   > 	<category android:name="android.intent.category.DEFAULT"/>
-   > 	<category android:name="android.intent.category.BROWSABLE"/>
-   > </intent-filter>
-   > ```
-   >
-   > Далее необходимо сгенерировать JSON файл подписи, это делается в Android Studio Tools->App Links Assistant и залить на собственный домен по пути https://example.com/.well-known/assetlinks.json
-   >
-   > После чего, при переходе по установленной ранее ссылки, пользователю будет предлагаться открыть ее в приложении.
-   
+> В этом случае в AndroidManifest.xml в блок activity необходимо добавить Intent-filter:
+>
+> ```xml
+> <intent-filter android:autoVerify="true"> //необходимо для подтверждения домена
+> 	<data android:scheme="https://" android:host="example.com" android:path="/example"/>  
+> 	<action android:name="android.intent.action.VIEW"/> 
+> 	<category android:name="android.intent.category.DEFAULT"/>
+> 	<category android:name="android.intent.category.BROWSABLE"/>
+> </intent-filter>
+> ```
+>
+> Далее необходимо сгенерировать JSON файл подписи, это делается в Android Studio Tools->App Links Assistant и залить на собственный домен по пути https://example.com/.well-known/assetlinks.json
+>
+> После чего, при переходе по установленной ранее ссылки, пользователю будет предлагаться открыть ее в приложении.
+
 3. Веб-ссылка (открывается только в браузере)
 
-   >Deep Link можно получить в классе Activity:
-   >
-   >```java
-   >Intent intent = getIntent();
-   >Uri appLinkData = intent.getData();
-   >if (appLinkData != null){
-   >	Log.d(TAG, appLinkData.toString());
-   >}
-   >```
+>Deep Link можно получить в классе Activity:
+>
+>```java
+>Intent intent = getIntent();
+>Uri appLinkData = intent.getData();
+>if (appLinkData != null){
+>	Log.d(TAG, appLinkData.toString());
+>}
+>```
 
 Стоит отметить, что Deep Links можно получить после установки приложения.
 
