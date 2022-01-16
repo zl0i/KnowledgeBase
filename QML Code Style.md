@@ -1,3 +1,5 @@
+## QML Code Style
+
 Атрибуты объектов QML должны быть всегда структурированы в следующем порядке:
 	id
 	property declarations
