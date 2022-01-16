@@ -52,15 +52,15 @@ Android Deep Links позволяют обрабатывать ссылки че
    
 3. Веб-ссылка (открывается только в браузере)
 
-Deep Link можно получить в классе Activity:
-
-   ```java
-   Intent intent = getIntent();
-   Uri appLinkData = intent.getData();
-   if (appLinkData != null){
-   	Log.d(TAG, appLinkData.toString());
-   }
-   ```
+   >Deep Link можно получить в классе Activity:
+   >
+   >```java
+   >Intent intent = getIntent();
+   >Uri appLinkData = intent.getData();
+   >if (appLinkData != null){
+   >	Log.d(TAG, appLinkData.toString());
+   >}
+   >```
 
 Стоит отметить, что Deep Links можно получить после установки приложения.
 
