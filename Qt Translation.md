@@ -23,19 +23,6 @@ G:\Qt\5.12.4\mingw73_64\bin\lupdate.exe main.qml -ts main_en.ts main_ru.ts main_
 G:\Qt\5.12.4\mingw73_64\bin\lupdate.exe qml.qrc -ts main_en.ts main_ru.ts main_fr.ts
 ```
 
-команда создаст файл перевода (main_en.ts) для файла main.qml
-Также можно указывать несколько файлов перевода сразу, пример:	
-
-```
-G:\Qt\5.12.4\mingw73_64\bin\lupdate.exe main.qml -ts main_en.ts main_ru.ts main_fr.ts 
-```
-
-Также можно файл ресурсов с qml файлами, пример:	
-
-```
-G:\Qt\5.12.4\mingw73_64\bin\lupdate.exe qml.qrc -ts main_en.ts main_ru.ts main_fr.ts
-```
-
 После создания файлов перевода необходимо открыть программу linguist.exe (путь: G:\Qt\5.12.4\mingw73_64\bin)
 В программе открываем созданные ранее .ts файлы переводим каждую строку. После чего необходимо скомпилировать готовые файлы перевода (Файл-> Скомпилировать все)
 Полученные файлы (.qm) необходимо добавить в файл ресурсов в проект.
